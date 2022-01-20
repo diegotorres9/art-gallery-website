@@ -1,0 +1,16 @@
+:root {
+    --primary-color: #d5966c;
+    --secondary-color: #151515;
+    --gray: #444444;
+    --white: #ffffff;
+    --BigShouldersDisplay: 'Big Shoulders Display', cursive;
+    --Outfit: 'Outfit', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--BigShouldersDisplay);
+    text-transform: uppercase;
+}
+h1 {
+    font-size: clamp(3.75rem, 5vw + 2.5rem, 6rem);
+    line-height: clamp(3.125rem, 5vw + 1.5rem, 5.5rem);
+}
