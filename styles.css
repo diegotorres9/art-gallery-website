@@ -114,6 +114,7 @@ p, address {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 9999;
 }
 .home-link svg {
     background-color: var(--primary-color);
@@ -122,6 +123,10 @@ p, address {
 }
 .home-link svg path {
     transform: translate(24px, 24px);
+}
+#location-map {
+    height: 550px;
+    width: 100%;
 }
 .location-block {
     background-color: var(--secondary-color);
@@ -143,6 +148,7 @@ p, address {
 }
 .location-block p {
     color: var(--white);
+    line-height: 28px;
 }
 .location-footer {
     background-color: var(--primary-color);
@@ -155,6 +161,7 @@ p, address {
 }
 .location-footer p {
     margin-bottom: 38px;
+    line-height: 26px;
 }
 .location-footer .location-footer-icons svg:nth-child(2){
     margin:0 20px;
