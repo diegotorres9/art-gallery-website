@@ -31,16 +31,17 @@ p, address {
     margin-bottom: 32px;
 }
 .hero .location-link {
-    width: 204px;
+    width: 260px;
     height: 72px;
     background-color: var(--secondary-color);
     color: var(--white);
     font-size: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     letter-spacing: 3.64px;
     margin-bottom: 120px;
+    padding-left: 32px;
 }
 .location-link svg {
     background-color: var(--primary-color);
@@ -99,15 +100,17 @@ p, address {
 }
 /* LOCATION PAGE STYLING */
 .home-link {
-    width: 208px;
+    width: 260px;
     height: 72px;
     background-color: var(--secondary-color);
     color: var(--white);
     font-size: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     letter-spacing: 3.64px;
+    margin-bottom: 120px;
+    padding-right: 32px;
     position: absolute;
     top: 0;
     left: 0;
