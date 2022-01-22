@@ -10,12 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Outfit:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
   <title>Frontend Mentor | Art gallery website</title>
 </head>
 <body>
@@ -54,23 +52,50 @@
   </footer>
   
 <script>
-  // LEAFLET JS MAP
-  var map = L.map('location-map').setView([41.482, -71.31], 15);
+// MAPBOX GL Map
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ290b3JyZXM5IiwiYSI6ImNrZm9sYWN5aDAzZzgzMGxkd3VvbnVkczIifQ.siD760YhTxGGgoQ-OVQhSw';
+const map = new mapboxgl.Map({
+  container: 'location-map',
+  style: 'mapbox://styles/diegotorres9/ckyp0g0yq10dv14mpts3aampl',
+  center: [-71.31, 41.482],
+  zoom: 14
+});
+// USE CUSTOM ICON AS PIN & ADD TO MAP
+map.on('load', () => {
+  map.loadImage(
+    'assets/icon-location.png',
+    (error, image) => {
+      if (error) throw error;
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiZGllZ290b3JyZXM5IiwiYSI6ImNrZm9sYWN5aDAzZzgzMGxkd3VvbnVkczIifQ.siD760YhTxGGgoQ-OVQhSw'
-}).addTo(map);
-// CUSTOM ICON FOR MAP PIN
-var customIcon = L.icon({
-  iconUrl: 'assets/icon-location.svg',
-  iconSize: [66, 88]
-  });
-L.marker([41.482, -71.31], {icon: customIcon}).addTo(map);
+      map.addImage('location', image);
+
+      map.addSource('point', {
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': [
+            {
+              'type': 'Feature',
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-71.31, 41.482]
+              }
+            }
+          ]
+        }
+      });
+      map.addLayer({
+        'id': 'points',
+        'type': 'symbol',
+        'source': 'point',
+        'layout': {
+          'icon-image': 'location',
+          'icon-size': .75
+        }
+      });
+    }
+  );
+});
 </script>
 
 
