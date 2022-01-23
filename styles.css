@@ -16,7 +16,7 @@ p, address {
     line-height: clamp(1.75rem, 1vw + 1.25rem, 2rem);
 }
 /* MARGIN SETTING */
-.hero h1, .hero p, .hero .location-link, .home-gallery, .inspired-block {
+.hero h1, .hero p, .hero .location-link, .home-gallery {
     margin: 0 16px;
 }
 .hero h1 {
@@ -55,6 +55,7 @@ p, address {
 .home-gallery {
     display: flex;
     flex-direction: column;
+    margin-bottom: 120px;
 }
 .home-gallery h2 {
     font-size: 50px;
@@ -64,14 +65,14 @@ p, address {
 .home-gallery p {
     color: var(--gray);
     margin-bottom: 32px;
-}
-.home-gallery, .gallery-img-2 {
+} 
+.gallery-img-2 {
     margin-bottom: 16px;
 }
 .inspired-block {
     background-color: var(--secondary-color);
     padding: 48px 24px;
-    margin-bottom: 120px;
+    margin-top: 16px;
 }
 .inspired-block h2 {
     font-size: 50px;
@@ -165,4 +166,42 @@ p, address {
 }
 .location-footer .location-footer-icons svg:nth-child(2){
     margin:0 20px;
+}
+/* 768PX SCREEN SIZE */
+@media screen and (min-width: 768px) {
+    /* HERO STYLING */
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, auto);
+    }
+    .hero .hero-image {
+        grid-column: 1 / span 3;
+        grid-row: 1 / -1;
+        z-index: -1;
+        margin-bottom: 120px;
+        width: 437px;
+        height: 700px;
+    }
+    .hero h1 {
+        grid-column: 3 / 5;
+        grid-row: 1;
+        margin-left: 0;
+        transform: translate(125px, 120px);
+    }
+    .hero p {
+        grid-column: 3 / 5;
+        grid-row:  2;
+        margin-left: 0;
+        margin-top: 48px;
+        margin-bottom: 48px;
+        transform: translate(125px, 120px);
+    }
+    .hero .location-link {
+        grid-column: 3 / 4;
+        grid-row: 3;
+        margin-left: 0;
+        transform: translate(125px, 120px);
+    }
+    /* 768PX GALLERY GRID STYLING */
 }
