@@ -87,7 +87,7 @@ p, address {
     padding: 48px 32px;
 }
 .home-footer h3 {
-    font-size: 26px;
+    font-size: clamp(1.125rem, -2vw + 2.5rem, 1.625rem);
     color: var(--white);
     margin-bottom: 38px;
 }
@@ -204,4 +204,27 @@ p, address {
         transform: translate(125px, 120px);
     }
     /* 768PX GALLERY GRID STYLING */
+    /* 768px FOOTER STYLING */
+    .home-footer {
+        display: flex;
+        justify-content: space-around;
+        padding: 56px 40px;
+    }
+    .home-footer h3, .home-footer p {
+        margin-bottom: 0;
+    }
+    .home-footer img {
+        align-self: flex-start;
+    }
+    .home-footer h3 {
+        font-size: 22px;
+    }
+    .home-footer p {
+        margin-left: 65px;
+        margin-right: 133px;
+        align-self: flex-start;
+    }
+    .home-footer .footer-links {
+        display: flex;
+    }
 }
