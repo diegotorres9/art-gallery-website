@@ -190,6 +190,12 @@ p, address {
 .location-footer .location-footer-icons svg:nth-child(2){
     margin:0 20px;
 }
+.location-footer-icons svg:hover {
+    cursor: pointer;
+}
+.location-footer-icons svg:hover path {
+    fill: var(--white);
+}
 /* 768PX SCREEN SIZE */
 @media screen and (min-width: 768px) {
     /* HERO STYLING */
@@ -228,18 +234,18 @@ p, address {
     }
     /* 768PX GALLERY GRID STYLING */
     .home-gallery {
-        display: grid;
-        /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
-        /* grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); */
-        grid-template-areas: 
-        "heading image-1 image-1 image-1"
-        "image-2 image-2 image-3 image-3"
-        "image-2 image-2 block block";
-        gap: 11px;
         margin: 0 40px 120px 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-areas: 
+        "text image-1"
+        "image-2 image-3"
+        "image-2 block";
+        gap: 11px;
     }
     .home-gallery .gallery-info {
-        grid-area: heading;
+        grid-area: text;
     }
     .home-gallery .gallery-img-1 {
         grid-area: image-1;
@@ -248,11 +254,10 @@ p, address {
         grid-area: image-2;
     }
     .home-gallery .gallery-img-3 {
-        grid-area: image-3
+        grid-area: image-3;
     }
     .home-gallery .inspired-block {
         grid-area: block;
-        margin-top: 0;
     }
     /* 768px FOOTER STYLING */
     .home-footer {
