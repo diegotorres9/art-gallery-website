@@ -232,28 +232,7 @@ p, address {
         margin-left: 0;
         transform: translate(125px, 120px);
     }
-    /* 768PX GALLERY GRID STYLING */
-    .home-gallery {  display: grid;
-        grid-template-columns: 1.6fr 0.4fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 11px 11px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "gallery-info gallery-img-1 gallery-img-1 gallery-img-1"
-          "gallery-img-2 gallery-img-2 gallery-img-3 gallery-img-3"
-          "gallery-img-2 gallery-img-2 inspired-block inspired-block";
-      }
-      
-      .gallery-info { grid-area: gallery-info; }
-      
-      .gallery-img-1 { grid-area: gallery-img-1; }
-      
-      .gallery-img-2 { grid-area: gallery-img-2; }
-      
-      .gallery-img-3 { grid-area: gallery-img-3; }
-      
-      .inspired-block { grid-area: inspired-block; margin-top: 0; }
-      
+    /* 768px GALLERY STYLING */
     /* 768px FOOTER STYLING */
     .home-footer {
         display: flex;
@@ -322,12 +301,14 @@ p, address {
 /* 1440PX DESKTOP STYLES */
 @media screen and (min-width: 1440px) {
     .hero {
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr;
         margin-bottom: 180px;
     }
     .hero .hero-image {
         grid-column: 2 / 4;
+        grid-row: 1;
         height: 800px;
         width: 540px;
         max-width: 100%;
@@ -342,6 +323,7 @@ p, address {
     }
     .hero h1 {
         grid-column: 1 / span 2;
+        grid-row: 1;
         transform: translate(149px, 189px);
         margin-top: 0;
         background-image: 
