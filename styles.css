@@ -401,6 +401,22 @@ p, address {
         transform: translate(50px, 341px);
         margin-top: 64px;
     }
+    /* 1440px GRID GALLERY */
+    .home-gallery {
+        padding: 0 165px;
+    }
+    .home-gallery .top-gallery {
+        grid-template-columns: .5fr 1fr;
+        margin-bottom: 30px;
+    }
+    .home-gallery .bottom-gallery {
+        grid-template-columns: 1fr .5fr;
+        grid-template-rows: .5fr .25fr;
+        gap: 30px;
+    }
+    .bottom-gallery .inspired-block {
+        padding: 65px 48px;
+    }
     /* 1440PX FOOTER STYLING */
     .home-footer {
         padding: 80px 165px;
